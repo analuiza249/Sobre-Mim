@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Questionário</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 30px;
+      text-align: center;
+    }
+    h1 {
+      color: #FF6699;
+      margin-bottom: 20px;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      background: #FF6699;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 5px;
+    }
+    button:hover {
+      background: #cc5277;
+    }
+    .botoes-nav {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Questionário Pessoal</h1>
+  
+  <!-- Substitua SEU_ENDPOINT pelo link que o Formspree gerar -->
+  <form id="formulario" action="https://formspree.io/f/mldplera" method="POST">
+    
+    <label for="nome">Qual seu nome?</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="idade">Qual sua idade?</label>
+    <input type="number" id="idade" name="idade" required>
+
+    <label for="email">Seu e-mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="conhece">Você acha que me conhece?</label>
+    <select id="conhece" name="conhece" required>
+      <option value="">Selecione</option>
+      <option value="Sim">Sim</option>
+      <option value="Nao">Não</option>
+    </select>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div class="botoes-nav">
+    <button onclick="voltarAnterior()">Proxima pagina</button>
+    <button onclick="voltarInicio()">Voltar Página Inicial</button>
+  </div>
+
+  <script>
+    function voltarAnterior() {
+ window.location.href = "pagina12.html"; // coloque o nome da sua página inicial
+    }
+
+    function voltarInicio() {
+      window.location.href = "site.experimento.html"; // coloque o nome da sua página inicial
+    }
+
+    // Validação extra antes do envio
+    document.getElementById("formulario").addEventListener("submit", function(event) {
+      const nome = document.getElementById("nome").value.trim();
+      const idade = document.getElementById("idade").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const conhece = document.getElementById("conhece").value.trim();
+
+      if (!nome || !idade || !email || !conhece) {
+        alert("Por favor, responda todas as perguntas obrigatórias!");
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
