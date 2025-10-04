@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Escolha a Opção</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Fredoka One', cursive;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .titulo {
+      font-size: 50px;
+      color: #FF6699;
+      margin-top: 80px; /* espaço por causa dos botões fixos */
+    }
+
+    .botoes-imagem {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .botao-img {
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+      border-radius: 15px;
+      border: 3px solid transparent;
+      transition: transform 0.2s, border-color 0.2s;
+      object-fit: cover;
+    }
+
+    .botao-img:hover {
+      transform: scale(1.1);
+      border-color: #FF99AA;
+    }
+
+    #resultado {
+      margin-top: 30px;
+      font-size: 26px;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 10px;
+      display: inline-block;
+      min-width: 220px;
+    }
+
+    /* Botão Próxima Página */
+    .botao-proxima {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 25px;
+      font-size: 18px;
+      color: white;
+      background-color: #FF99AA;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Fredoka One', cursive;
+      z-index: 1000;
+    }
+
+    .botao-proxima:hover {
+      background-color: #FF6699;
+    }
+
+    /* Botão Voltar à Página Anterior */
+    .botao-voltar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 12px 25px;
+      font-size: 18px;
+      color: white;
+      background-color: #FF99AA;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Fredoka One', cursive;
+      z-index: 1000;
+    }
+
+    .botao-voltar:hover {
+      background-color: #FF6699;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="titulo">Meu filme disney favoritoa:</h1>
+
+  <!-- 4 imagens como botões -->
+  <div class="botoes-imagem">
+    <img src="filmes1.png" alt="Foto 1" class="botao-img" onclick="verificarEscolha(false)">
+    <img src="filmes2.png" alt="Foto 2" class="botao-img" onclick="verificarEscolha(false)">
+    <img src="filmes3.png.png" alt="Foto 3" class="botao-img" onclick="verificarEscolha(true)">
+    <img src="filmes4.png" alt="Foto 4" class="botao-img" onclick="verificarEscolha(false)">
+  </div>
+
+  <!-- Resultado -->
+  <div id="resultado"></div>
+
+  <!-- Botões fixos -->
+  <button class="botao-voltar" onclick="voltarPagina()">Voltar à Página Anterior</button>
+  <button class="botao-proxima" onclick="proximaPagina()">Próxima Página</button>
+
+  <script>
+    function verificarEscolha(correta) {
+      const resultado = document.getElementById("resultado");
+      if(correta) {
+        resultado.textContent = "Muito bom! 🎉";
+        resultado.style.color = "green";
+        resultado.style.backgroundColor = "#D4FFD4";
+        resultado.style.border = "2px solid green";
+      } else {
+        resultado.textContent = "Errou! ❌";
+        resultado.style.color = "red";
+        resultado.style.backgroundColor = "#FFD4D4";
+        resultado.style.border = "2px solid red";
+      }
+    }
+
+    function voltarPagina() {
+     window.location.href = "pagina4.html"; // coloque aqui o link da próxima página
+    }
+
+    function proximaPagina() {
+      window.location.href = "pagina6.html"; // coloque aqui o link da próxima página
+    }
+  </script>
+</body>
+</html>
