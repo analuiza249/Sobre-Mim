@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<h1 class="titulo">Qual Rede social eu mais uso ?</h1>
+<body><div class="botoes-imagem">
+    <img src="mercado1.png" alt="Foto 1" class="botao-img" onclick="verificarEscolha(false)">
+    <img src="mercado2.png" alt="Foto 2" class="botao-img" onclick="verificarEscolha(false)">
+    <img src="mercado3.png" alt="Foto 3" class="botao-img" onclick="verificarEscolha(true)">
+  </div>
+
+  <!-- Resultado -->
+  <div id="resultado"></div>
+
+
+  <button class="botao-voltar" onclick="voltarInicio()">Voltar à Página Anterior</button>
+  <button class="botao-proxima" onclick="proximaPagina()">Próxima Página</button>
+
+<style>
+  body {
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .titulo {
+    font-size: 50px;
+    color: #FF6699;
+    margin-top: 80px;
+  }
+
+  .botoes-imagem {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .botao-img {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 3px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+    object-fit: cover;
+  }
+
+  .botao-img:hover {
+    transform: scale(1.1);
+    border-color: #FF99AA;
+  }
+
+  #resultado {
+    margin-top: 40px;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 12px;
+    display: inline-block;
+    min-width: 200px;
+  }
+
+  /* Botão Voltar fixo no canto superior esquerdo */
+  .botao-voltar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 12px 25px;
+    font-size: 18px;
+    color: white;
+    background-color: #FF99AA;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Fredoka One', cursive;
+    z-index: 1000;
+  }
+
+  .botao-voltar:hover {
+    background-color: #FF6699;
+  }
+
+  /* Botão Próxima fixo no canto superior direito */
+  .botao-proxima {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 25px;
+    font-size: 18px;
+    color: white;
+    background-color: #FF99AA;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Fredoka One', cursive;
+    z-index: 1000;
+  }
+
+  .botao-proxima:hover {
+    background-color: #FF6699;
+  }
+</style>
+
+<script>
+  function verificarEscolha(correta) {
+    const resultado = document.getElementById("resultado");
+    if(correta) {
+      resultado.textContent = "Muito bom! 🎉";
+      resultado.style.color = "green";
+      resultado.style.backgroundColor = "#D4FFD4";
+      resultado.style.border = "2px solid green";
+    } else {
+      resultado.textContent = "Errou! ❌";
+      resultado.style.color = "red";
+      resultado.style.backgroundColor = "#FFD4D4";
+      resultado.style.border = "2px solid red";
+    }
+  }
+
+  function voltarInicio() {
+    window.location.href = "pagina7.html"; // altere para o nome da sua página inicial
+  }
+
+  function proximaPagina() {
+     window.location.href = "pagina9.html"; // altere para o link da próxima página
+  }
+
+</script>
+</body>
+</html>
