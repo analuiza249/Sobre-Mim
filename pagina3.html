@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Fredoka One', cursive;
+      margin: 0;
+      padding: 0;
+    }
+
+    .titulo {
+      font-family: 'Kiddo Handwriting', cursive;
+      font-size: 70px;
+      text-align: center;
+      color: #FF6699;
+      margin-top: 80px; /* espaço por causa dos botões no topo */
+    }
+
+    .pergunta-bloco {
+      margin-top: 40px;
+    }
+
+    .pergunta {
+      font-family: 'Kiddo Handwriting', cursive;
+      font-size: 30px;
+      text-align: center;
+      color: #FF6699;
+      margin-bottom: 15px;
+    }
+
+    .input-texto, .input-data {
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: 2px solid #FF99AA;
+      margin-right: 10px;
+      width: 250px;
+      font-family: 'Fredoka One', cursive;
+      text-align: center;
+    }
+
+    .botao-verificar {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #FF99AA;
+      color: white;
+      cursor: pointer;
+      font-family: 'Fredoka One', cursive;
+      transition: 0.3s;
+    }
+
+    .botao-verificar:hover {
+      background-color: #FF6699;
+    }
+
+    #resultadoNome, #resultadoData {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 12px;
+      border-radius: 10px;
+      display: inline-block;
+      min-width: 200px;
+    }
+
+    /* Botão Próxima Página */
+    .botao-proxima {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 25px;
+      font-size: 18px;
+      color: white;
+      background-color: #FF99AA;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Fredoka One', cursive;
+      z-index: 1000;
+    }
+
+    .botao-proxima:hover {
+      background-color: #FF6699;
+    }
+
+    /* Botão Voltar à Página Anterior */
+    .botao-voltar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 12px 25px;
+      font-size: 18px;
+      color: white;
+      background-color: #FF99AA;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Fredoka One', cursive;
+      z-index: 1000;
+    }
+
+    .botao-voltar:hover {
+      background-color: #FF6699;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="titulo">Perguntas Simples:</h1>
+
+  <!-- Bloco da primeira pergunta -->
+  <div class="pergunta-bloco">
+    <h2 class="pergunta">Qual a minha data de nascimento?</h2>
+    <input type="date" id="respostaData" class="input-data">
+    <button class="botao-verificar" onclick="verificarData()">Enviar</button>
+    <div id="resultadoData"></div>
+  </div>
+
+  <!-- Bloco da segunda pergunta -->
+  <div class="pergunta-bloco">
+    <h2 class="pergunta">Qual é o meu nome completo?</h2>
+    <input type="text" id="respostaNome" class="input-texto" placeholder="Digite seu nome...">
+    <button class="botao-verificar" onclick="verificarNome()">Enviar</button>
+    <div id="resultadoNome"></div>
+  </div>
+
+  <!-- Botões fixos -->
+  <button class="botao-voltar" onclick="voltarPagina()">Voltar à Página Anterior</button>
+  <button class="botao-proxima" onclick="proximaPagina()">Próxima Página</button>
+
+  <!-- JavaScript externo -->
+  <script src="pagina.js"></script>
+
+  <script>
+    function voltarPagina() {
+     window.location.href = "pagina2.html"; // altere para a próxima página
+    }
+
+    function proximaPagina() {
+      window.location.href = "pagina4.html"; // altere para a próxima página
+    }
+  </script>
+</body>
+</html>
